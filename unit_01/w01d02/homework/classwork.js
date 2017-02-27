@@ -8,25 +8,25 @@
 // For each expression below, indicate whether it is 'truthy' or 'falsey'
 // by assigning the appropriate variable a value of either `true` or `false`.
 
-// 1. true || false 
+// 1. true || false
 //var resOne = true;
-var resOne;
+var resOne = true;
 
 // 2. null || ''
 //var resTwo = falsey;
-var resTwo;
+var resTwo = false;
 
 // 3. 'false' && true
 //var resThree = true;
-var resThree;
+var resThree = true;
 
 // 4. !!0
 //var resFour = false;
-var resFour;
+var resFour = false;
 
 // 5. !null && !undefined
 //var resFive = true;
-var resFive;
+var resFive = true;
 
 /// Flow Control ///
 
@@ -49,11 +49,12 @@ do {
   resSeven === 95 || 105; 95<resSeven< 105;
 }
 while (resSeven < 95){
-    resSeven =-7
+    resSeven += 12;
 }
 while (resSeven > 105) {
-resSeven+=12
+  resSeven -= 7;
 }
+
 {
   console.log(resSeven)
 }
@@ -63,17 +64,27 @@ resSeven+=12
 //    variable `resEight`.
 var resEight;
 // Replace This Comment With Your Code
-
+for (var i = 0; i < 1857; i++) {
+  resEight += i;
+}
 // 9. Using a `for` loop, calculate the sum of all multiples of 7 between 0
 //    (inclusive) and 1000 (exclusive); store the result in the variable
 //    `resNine`.
 var resNine;
 // Replace This Comment With Your Code
+for (var i = 0; i < 1000; i += 7) {
+  resNine += i;
+}
+
 
 // 10. Using whatever code you like, calculate n^n for each value from n from 1
 //     to 10 (both inclusive), and store the sum in the variable `resTen`.
 var resTen;
 // Replace This Comment With Your Code
+for (var i = 1; i <= 10; i++) {
+  resTen += Math.pow(i, i);
+}
+
 
 /// DO NOT EDIT BELOW THIS LINE ///
 module.exports = {
