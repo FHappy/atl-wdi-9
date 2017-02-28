@@ -1,0 +1,35 @@
+body {
+  background-image: url(images/vaporwave.jpg);
+}
+.page-header h1 {
+  text-align: center;
+  text-decoration: underline;
+  size: 50px;
+  font: Helvetica;
+}
+
+.jumbotron {
+  background: rgba(68, 62, 167, 0.75);
+}
+
+.jumbotron h1 {
+  color: #fff;
+}
+
+.row {
+  text-align: center;
+}
+
+.col-lg-4 {
+  background: rgb(177, 41, 134);
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+}
+
+img{
+  width: 390px;
+  height: 300px;
+}

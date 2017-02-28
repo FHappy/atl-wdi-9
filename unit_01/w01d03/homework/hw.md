@@ -61,12 +61,45 @@ how long each task took to complete. Tasks can be grouped into 'projects' to
 keep them organized.
 
 > Answer here
+Directory:
+>Projects
+  >Tasks
+    >task.startTime
+    >task.endTime
+    >task.elapsedTime = task.endTime - task.startTime
+    >task.completion (boolean value)
 
+Ideally, you could "start" each task, after which the current time would be recorded as a DateTime object under task.startTime.
+Once completed, you would "end" the task, after which the current time would also be recorded and stored as a task.endTime variable.
+The task.completion value would then be true, and some logic involved would render that task as inactive (grey, crossed out, etc).
 ### 2. Photo Sharing App
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
 > Answer here
+Directory:
+>User
+  >Photo Albums
+    >Album1
+      >photo1
+        >photo1.time
+        >photo1.location
+        >photo1.faces
+      >photo2
+        >photo2.time
+        >photo2.location
+        >photo2.faces
+      >photo3
+        >photo3.time
+        >photo3.location
+        >photo3.faces
+      etc
+
+
+Database would be organized according to user, each album would be displayed alphabetically or however the user likes.
+Under each album would be a collection of photos. Each photo beyond being a img file would also have certain attributes attached.
+Attributes including the date/time in which the photo was taken (photo*.time), the location in which the photo was taken
+(photo*.location), and faces recognized by inherent software (photo*.faces), as well as others.
 
 ### 3. Home Automation Manager
 
@@ -76,6 +109,20 @@ information to turn on and off different lights and adjust the thermostat up
 and down.
 
 > Answer here
+Directory:
+>Home
+  >Attributes
+    >Home.temp
+    >Home.time
+  >Peripherals
+    >A/C Unit
+      >Preset Schedule
+    >Lights
+      >Preset Schedule
+
+The smart Home would record the temperature and time, refreshing every 10 minutes.
+Based around the users preset schedule, the A/C unit and lights would function. E.g. "Lights" would be turned off after 9 am
+and before 5 pm on weekdays. The A/C unit would be off after 9 am and at 4:30 pm on weekdays (in the interest of frugality).
 
 ### 4. Sneaker Store
 
@@ -84,6 +131,28 @@ case), add those products to a cart, and save that cart as a past order once the
 purchase is complete.
 
 > Answer here
+Directory:
+>Store
+  >Product List
+    >Retail
+      >Sneakers
+        >add item to cart function
+    >Sale
+      >Sneakers
+        >add item to cart function
+  >User account
+    >Viewing History
+      >User.viewed
+    >Purchase History
+      >User.orders
+    >Shopping Cart
+      >Cart.items (items added to cart)
+      >Checkout
+        >add order to user.orders function
+
+Here the Store itself contains a product list as well as a user account function.
+The product list contains all items available, the user account contains all user history.
+Users will be able to add items from the products available and purchase them.
 
 ## Representing Abstractions in Code
 
@@ -138,8 +207,10 @@ var exampleLine = {
 ```
 
 What are some advantages and disadvantages of choosing these representations? Please give at least one example of each.
-
 > Answer here
+Advantage: Users can access the "green Line", and information included will be the three stops.
+Disadvantage: stops are not indexed, nor is there a reference to order.
+
 
 ### 6. Doctor Appointment App
 
@@ -243,6 +314,21 @@ other? Are there any circumstances in which the other representation might be
 the better choice?
 
 > Answer here
+Option 1:
+  Advantages: Each doctor object has his/her appointments nested within the object.
+  The doctor can view his/her appointments and patient details easily.
+  Disadvantage: User can't view the appointment and find the presiding physician.
+
+Option 2:
+  Advantage: Each appointment object has nested within it both the doctors and the patients involved.
+  Disadvantage: Doctor/Patient objects are sparse and only include specific details.
+
+For a patient and/or administrator, the second option would be more convenient as a patient could access an appointment and view all
+necessary information.
+For a doctor, the first option would be more convenient as he/she is allowed to quickly view
+all appointment information from a single Doctor object.
+
+
 
 ## Tying It Together
 
@@ -254,12 +340,85 @@ a.  What are some possible entities that your application might use to model its
     data? Please pick at least two, with at least two properties apiece.
 
   > Answer here
-
+  >board (a 3x3 grid)
+  >player (x or o)
 b.  How might those entities be represented in JavaScript code?
 
   > Answer here
+  //initialize players
+  var player1 = "x";
+  var player2 = "o";
+  //initialize gameBoard object
+  var gameBoard = [
+  [["-"], ["-"], ["-"]],
+  [["-"], ["-"], ["-"]],
+  [["-"], ["-"], ["-"]]
+  ];
+  //get row values
+  function RowValues() {
+    var rows = [gameBoard[0], gameBoard[1], gameBoard[2]];
+  }
+  //get column values
+  function ColValues() {
+    var columns = [[], [], []];
+    for (var i = 0; i < 3; i++) {
+      for (var j = 0; j < 3; j++) {
+        columns.push(gameBoard[i][j]);
+      }
+    }
+  }
+
+  //upon event handler selection, update gameBoard object to "x" or "o"
+  //if player x chooses upper left most corner
+    gameBoard[0][0] = "x"; //update value
+  //check if user one by either having a row filled out or a column filled out
+  //check if a row is filled out by player1 or player 2 (either is passed as param)
+  function checkRows(player) {
+    RowValues();
+    for (row of rows) {
+      if (row.every(pos => pos === player)) {
+        console.log(player + "won!");
+        break;
+      }
+    }
+  }
+
+  //check if a column is filled out by player1 or player2 (either is passed as param)
+  function checkColumns(player) {
+    ColValues();
+    for (col of columns) {
+      if (col.every(pos => pos === player)) {
+        console.log(player + "won!");
+        break;
+      }
+    }
+  }
+
+  //check diagonals
+  function checkDiagonals(player) {
+    //first diagonal ([0,0], [1,1], [2,2] in the gameBoard)
+    var firstDiagonal = [];
+    for (var i = 0; i < 3; i++) {
+      firstDiagonal.push(gameBoard[i][i]);
+    }
+    if (firstDiagonal.every(pos => pos === player)) {
+      console.log(player + "won!");
+    }
+    //second diagonal ([0,2], [1,1], [2,0] in the gameBoard)
+    var secondDiagonal = [];
+    for (var i = 0; i < 3; i++) {
+      secondDiagonal.push([i][2-i]);
+    }
+    if (secondDiagonal.every(pos => pos === player)) {
+      console.log(player + "won!");
+    }
+  }
 
 c.  Justify your choices in a) and b). Why these entities? Why these
     representations?
 
   > Answer here
+  Players initialized to either "x" or "o" make updating the gameBoard object easy.
+  The gameBoard object is easily accessed and updated.
+  It would make more sense to make it dynamic and scalable, and to establish a general
+  "isWinnningCombination" function but that would take forever.
