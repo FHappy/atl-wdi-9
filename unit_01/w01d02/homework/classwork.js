@@ -8,6 +8,7 @@
 // For each expression below, indicate whether it is 'truthy' or 'falsey'
 // by assigning the appropriate variable a value of either `true` or `false`.
 
+<<<<<<< HEAD
 // 1. true || false
 //var resOne = true;
 var resOne = true;
@@ -27,22 +28,39 @@ var resFour = false;
 // 5. !null && !undefined
 //var resFive = true;
 var resFive = true;
+=======
+// 1. true || false 
+var resOne;
+// Replace This Comment With Your Code
+
+// 2. null || ''
+var resTwo;
+// Replace This Comment With Your Code
+
+// 3. 'false' && true
+var resThree;
+// Replace This Comment With Your Code
+
+// 4. !!0
+var resFour;
+// Replace This Comment With Your Code
+
+// 5. !null && !undefined
+var resFive;
+// Replace This Comment With Your Code
+>>>>>>> 7d2fa9223c5cb1043d66567c654cc1d781d8b23d
 
 /// Flow Control ///
 
 // 6. Write a `while` loop that increases `resSix` by 23 until `resSix` is five
 //    digits long. (Hint: take a look at the .toString() method)
-var resSix = 5;
-console.log(resSix.toString().length);
-
-while (resSix.toString().length < 5){
-  resSix+=23;
-}
-console.log(resSix)
+var resSix;
+// Replace This Comment With Your Code
 
 // 7. Write a `while` loop that increases `resSeven` by 12 when it's strictly
 //    below 95, decreases it by 7 when it's strictly above 105, and stops as
 //    soon as `resSeven` equals or falls between those two values.
+<<<<<<< HEAD
 var resSeven = 65;
 
 do {
@@ -58,6 +76,10 @@ while (resSeven > 105) {
 {
   console.log(resSeven)
 }
+=======
+var resSeven;
+// Replace This Comment With Your Code
+>>>>>>> 7d2fa9223c5cb1043d66567c654cc1d781d8b23d
 
 // 8. Write a `for` loop that counts from 0 (inclusive) to 1857 (exclusive) and
 //    calculates the sum of all of those numbers, storing the result in the
@@ -77,8 +99,7 @@ for (var i = 0; i < 1000; i += 7) {
 }
 
 
-// 10. Using whatever code you like, calculate n^n for each value from n from 1
-//     to 10 (both inclusive), and store the sum in the variable `resTen`.
+// 10. For numbers 1-10, calculate n^n and then store the sum of all of these values in the variable `resTen`.
 var resTen;
 // Replace This Comment With Your Code
 for (var i = 1; i <= 10; i++) {

@@ -2,7 +2,7 @@
   "name": "js-basics-hw-drilling",
   "version": "1.0.0",
   "description": "Homework assignment -- practice JS fundamentals.",
-  "main": "hw.js",
+  "main": "classwork.js",
   "scripts": {
     "test": "mocha spec/hw-spec.js"
   },

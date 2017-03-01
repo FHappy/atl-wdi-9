@@ -207,7 +207,7 @@
 <td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_01/w01d02/homework">Morning Exercise</a></td>
 <td>WDI9 Outcomes: Intro to Outcomes Program + Post-Course Support</td>
 <td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/morning_exercises/javascript-good-and-bad-parts.md">Morning Exercise</a></td>
-<td><aa href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_01/w02d04/morning_exercise">Morning Exercise</a></td>
+<td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_01/w02d04/morning_exercise">Morning Exercise</a></td>
 <td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_01/w02d05/morning_exercise">Morning Exercise</a></td>
 </tr>
 <tr>
@@ -215,7 +215,7 @@
 <td>Data Structures:
   <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_01/w01d03/instructor_notes/arrays.md">Arrays</a>
 </td>
-<td><a href="https://github.com/ga-students/wdi-remote-matey/blob/master/unit_01/w01d04/instructor_notes/functions_and_scope.md">JS Functions + Scope</a></td>
+<td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_01/w01d04/instructor_notes/functions_and_scope.md">JS Functions + Scope</a></td>
 <td>
   <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_01/w02d01/instructor_notes/dom-intro-and-dev-tools.md">Debugging, Chrome Dev Tools</a> 
   + <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_01/w02d01/instructor_notes/dom-commands-part-one.md">Dom Manipulation</a>
@@ -229,7 +229,7 @@
 <td>Data Structures: 
   <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_01/w01d03/instructor_notes/javascript_objects.md">JS Objects</a>
 </td>
-<td><a href="https://github.com/ga-students/wdi-remote-matey/blob/master/unit_01/w01d04/instructor_notes/functions_and_scope.md">JS Functions + Scope</a></td>
+<td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_01/w01d04/instructor_notes/functions_and_scope.md">JS Functions + Scope</a></td>
 <td>
   <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_01/w02d01/instructor_notes/dom-intro-and-dev-tools.md">Debugging, Chrome Dev Tools</a> 
   + <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_01/w02d01/instructor_notes/dom-commands-part-one.md">Dom Manipulation</a>
@@ -243,7 +243,7 @@
 <td>Data Structures:
   <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_01/w01d03/instructor_notes/loops_iterators.md">Loops</a>
 </td>
-<td><a href="https://github.com/ga-students/wdi-remote-matey/blob/master/unit_01/w01d04/instructor_notes/functions_and_scope.md">JS Functions + Scope</a></td>
+<td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_01/w01d04/instructor_notes/functions_and_scope.md">JS Functions + Scope</a></td>
 <td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_01/w02d02/instructor_notes/click_events.md">Dom Events</a></td>
 <td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_01/w02d04/instructor_notes/intermediate_jquery.md">Intermediate jQuery</a></td>
 <td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_01/w05d04/instructor_notes/css-and-jquery-transition-transform-animate.md">CSS Animations</a></td>
@@ -274,15 +274,15 @@
   <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_01/w02d05/student_labs/jedi-jquery-starter
   ">Javascript Jedi LAB</a><br />
 </td>
-<td>CS Algorithms- Danny</td>
+<td>Intro to Design Patterns - Danny</td>
 </tr>
 <tr>
 <td><strong>Homework</strong></td>
-<td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/homework/2-27-17-progress-bar%2Ba-smarter-way">Homework</a></td>
+<td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/homework/2-27-17-progress-bar%2Ba-smarter-way.md">Homework</a></td>
 <td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/homework/2-28-17-function-drills%2Ba-smarter-way.md">Homework</a></td>
-<td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/homework/3-1-17-progress-bar%2Ba-smarter-way">Homework</a></td>
+<td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/homework/3-1-17-progress-bar%2Ba-smarter-way.md">Homework</a></td>
 <td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/homework/3-2-17-counter-factory%2Ba-smarter-way.md">Homework</a></td>
-<td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/homework/3-3-17-stopwatch%2Ba-smarter-way">Homework</a></td>
+<td><a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/homework/3-3-17-stopwatch%2Ba-smarter-way.md">Homework</a></td>
 </tr>
 </tbody></table>
 
@@ -294,6 +294,13 @@
 - [Eloquent JavaScript](http://eloquentjavascript.net/00_intro.html)
 - [Khan Academy- HTML/jQuery](https://www.khanacademy.org/computing/computer-programming/html-js-jquery)
 - [Khan Academy- JS Drawing and Animation](https://www.khanacademy.org/computing/computer-programming/programming)
+- [If/else w3 schools](https://www.w3schools.com/js/js_if_else.asp)
+- [If/else MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+- [If/else tutorial-after hours programming](http://www.afterhoursprogramming.com/tutorial/JavaScript/If-Statements/)
+- [Switch statements w3 schools](https://www.w3schools.com/js/js_switch.asp)
+- [Switch statements MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+- [Switch statements tutorial- tutorialspoint](http://www.tutorialspoint.com/javascript/javascript_switch_case.htm)
+- [Switch Statements tutorial-after hours programming](http://www.afterhoursprogramming.com/tutorial/JavaScript/Switch-Statement/)
 <br />
 
 #### ES6
@@ -403,10 +410,15 @@
 - [WDI-9 Cheatsheet](https://github.com/ATL-WDI-Curriculum/bootstrap-intro/blob/master/wdi-9-bootstrap-cheatsheet.md)
 - [Bootstrap](http://getbootstrap.com/getting-started/)
 - [Built with Bootstrap](https://bootstrapbay.com/blog/built-with-bootstrap/)
+- [Bootstrap Tutorial](https://www.youtube.com/watch?v=gqOEoUR5RHg)
+<br />
 <br />
 
 ## Important Links
 
 * [Google Calendar](https://calendar.google.com/calendar/embed?src=b4s54mkg0s2c1ddov57cffe4ls%40group.calendar.google.com&ctz=America/New_York)
 * [Hypepotamus Calendar of Events](https://www.google.com/search?q=hypepotamus+calendar&oq=hypepotamus+calendar&aqs=chrome.0.69i59.4188j0j7&sourceid=chrome&ie=UTF-8)
+* [JS Cheatsheet](https://docs.google.com/document/d/1J_ZjV0n65FZ_yQM8dqPqVw5JyebQh_AvhmXLYqCrc3o/edit?usp=sharing)
+* [WDI-9 Cheatsheet](https://github.com/ATL-WDI-Curriculum/bootstrap-intro/blob/master/wdi-9-bootstrap-cheatsheet.md)
+* [Daily Design/UI Challenge](http://www.dailyui.co/)- become a better designer in 100 days!
 
