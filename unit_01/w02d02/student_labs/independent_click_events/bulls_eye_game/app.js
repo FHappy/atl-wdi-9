@@ -25,17 +25,30 @@ window.onload = function() {
   var ring3 = document.querySelector('.ring-3');
 
   body.addEventListener('click', bullseyeGame.miss);
-  ring1.addEventListener('click', bullseyeGame.outerRing)
+  ring1.addEventListener('click', bullseyeGame.outerRing);
+  ring2.addEventListener('click', bullseyeGame.middleRing);
+  ring3.addEventListener('click', bullseyeGame.bullsEye);
+
 }
 
+function bullsEyeAlert() {
+  // this.background-color = "yellow";
+}
+
+var ring1 = document.querySelector('.ring-1');
+var ring2 = document.querySelector('.ring-2');
+var ring3 = document.querySelector('.ring-3');
 
 var bullseyeGame = {
   score: 0,
 
   updateScore: function(points) {
+    //stores div node with class "score" as variable "scoreElement"
     var scoreElement = document.querySelector('.score');
-    this.score += points
+    //updates node attribute score with points from click event
+    this.score += points;
 
+    //updates node's innerHTML to current score
     scoreElement.innerHTML = `${this.score} points`
   },
 
@@ -44,12 +57,40 @@ var bullseyeGame = {
     alert('YOU MISSED');
 
     bullseyeGame.updateScore(0);
+
     // [ALERT:] needs to be bullseyeGame because this in clickEvents refers to the html
     // element that was clicked
   },
 
+  bullsEye: function(event) {
+    this.style.background = "yellow";
+    event.stopPropagation();
+    alert('bullsEye was clicked');
+    bullseyeGame.updateScore(100);
+    window.setTimeout(function() {
+      ring3.style.background = "red";}, 3000);
+  },
+
+  middleRing: function(event) {
+    this.style.background = "yellow";
+    event.stopPropagation();
+    alert('middleRing was clicked');
+    bullseyeGame.updateScore(50);
+    window.setTimeout(function() {
+      ring2.style.background = "white";
+    }, 3000);
+  },
+
   outerRing: function(event) {
     event.stopPropagation();
-    alert('outerRing was clicked')
+    this.style.background = "yellow";
+    alert('outerRing was clicked');
+    bullseyeGame.updateScore(10);
+    window.setTimeout(function() {
+      ring1.style.background = "red";
+    }, 3000);
+
   }
 }
+
+
