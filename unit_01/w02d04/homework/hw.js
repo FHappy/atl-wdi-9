@@ -76,6 +76,7 @@ const Presenter = {
     $incrementButton.click(AppController.onClickIncrement);
     $deleteButton.click(AppController.onClickDelete);
   },
+
   refreshCounterComponent: function(countId){
     console.log(`refresh counter component #${countId}`);
     // Your Code Here
@@ -84,6 +85,7 @@ const Presenter = {
     var $spanElem = $(spanIdStr);
     $spanElem.html(incrementValue);
   },
+
   removeCounterComponent: function(countId){             // REACH
     console.log(`remove counter component #${countId}`);
     // Your Code Here
@@ -96,6 +98,7 @@ const Presenter = {
     }
     divToDel.remove();
   }
+
 };
 
 // Top-Level Application Control //
