@@ -62,8 +62,7 @@ const Presenter = {
                                 .attr('data-countId', newCountId);
     $counterContainer.append($counterDiv);
     var $counterH3 = $('<h3>').html('Count: <span id="counter' +
-                                    newCountId +
-                                    '">0</span>');
+                                    `${newCountId}">0</span>'`);
     $counterDiv.append($counterH3);
     var $incrementButton = $('<button>')
                             .addClass('increment')
@@ -81,7 +80,7 @@ const Presenter = {
     console.log(`refresh counter component #${countId}`);
     // Your Code Here
     var incrementValue = CounterCollection.getCounterValue(countId);
-    var spanIdStr = "#counter" + countId;
+    var spanIdStr = `#counter${countId}`;
     var $spanElem = $(spanIdStr);
     $spanElem.html(incrementValue);
   },
@@ -92,8 +91,9 @@ const Presenter = {
     var $counterDivList = $(".counter");
     var divToDel;
     for (var i = 0; i < $('.counter').length; i++) {
-      if (parseInt($('.counter')[i].getAttribute('data-countId')) === countId) {
-        divToDel = $('.counter')[i];
+      if (parseInt($('.counter')[i]
+        .getAttribute('data-countId')) === countId) {
+          divToDel = $('.counter')[i];
       }
     }
     divToDel.remove();
@@ -105,7 +105,7 @@ const Presenter = {
 const AppController = {
   onClickNewCounter: function(event){
     // Your Code Here
-    console.log(this);
+    // console.log(this);
     CounterCollection.createCounter();
     var newCountId = CounterCollection.lastCountId;
     Presenter.insertCounterComponent(newCountId);

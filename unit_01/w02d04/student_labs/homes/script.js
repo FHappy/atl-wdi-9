@@ -8,7 +8,8 @@ $(document).ready(function() {
 
   // $('.jumbotron').addClass('text-center');
 
-  var newLink = $('<br><br><a id="zillowLink" href="http://www.zillow.com">Visit Zillow.com</a>');
+  var newLink = $('<br><br><a id="zillowLink" ' +
+                  'href="http://www.zillow.com">Visit Zillow.com</a>');
   newLink.appendTo('body');
 
   $('#zillowlink').attr("target", "_blank");
@@ -28,11 +29,8 @@ $(document).ready(function() {
         newRow.append(cell);
       }
 
-      newRow.append(
-        '<td><button class="btn btn-xs ' +
-        'btn-danger">Remove</button></td>'
-        );
-
+      newRow.append('<td><button class="btn btn-xs ' +
+                    'btn-danger">Remove</button></td>');
       index++;
     }
   });
