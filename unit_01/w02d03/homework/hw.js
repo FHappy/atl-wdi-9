@@ -39,9 +39,9 @@ const Stopwatch = {
 
   start: function(){
     // Your Code Here
-    if (!Stopwatch.isRunning) {
-      Stopwatch.isRunning = true;
-      Stopwatch.tickClock();
+    if (!this.isRunning) {
+      this.isRunning = true;
+      this.tickClock();
     }
   },
 
@@ -52,9 +52,9 @@ const Stopwatch = {
 
   lap: function(){
     // Your Code Here
-    Stopwatch.laps.push([this.mins,
-                        this.secs % 60,
-                        this.millisecs % 1000]);
+    this.laps.push([this.mins,
+                    this.secs % 60,
+                    this.millisecs % 1000]);
   }
 };
 
