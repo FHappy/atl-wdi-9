@@ -32,9 +32,9 @@ const Stopwatch = {
     this.secs = 0;
     this.millisecs = 0;
     this.laps = [];
+
     ViewEngine.updateTimeDisplay('00', '00', '000');
     ViewEngine.updateLapListDisplay(this.laps);
-
   },
 
   start: function(){
