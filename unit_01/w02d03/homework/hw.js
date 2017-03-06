@@ -52,9 +52,9 @@ const Stopwatch = {
 
   lap: function(){
     // Your Code Here
-    this.laps.push([this.mins,
-                    this.secs % 60,
-                    this.millisecs % 1000]);
+    this.laps.push([ViewHelpers.zeroFill(this.mins, 2),
+                    ViewHelpers.zeroFill(this.secs % 60, 2),
+                    ViewHelpers.zeroFill(this.millisecs % 1000, 3)]);
   }
 };
 
@@ -85,6 +85,11 @@ const ViewEngine = {
 const ViewHelpers = {
   zeroFill: function(number, length){
     // Your Code Here
+    number = number.toString();
+    while (number.length < length) {
+      number = '0' + number;
+    }
+    return number;
   },
 };
 
@@ -92,9 +97,9 @@ const ViewHelpers = {
 const AppController = {
   handleClockTick: function(){
     // Your Code Here
-    var millisecsDisp = Stopwatch.millisecs % 1000;
-    var secsDisp = Stopwatch.secs % 60;
-    var minsDisp = Stopwatch.mins;
+    var millisecsDisp = ViewHelpers.zeroFill(Stopwatch.millisecs % 1000, 3);
+    var secsDisp = ViewHelpers.zeroFill(Stopwatch.secs % 60, 2);
+    var minsDisp = ViewHelpers.zeroFill(Stopwatch.mins, 2);
     ViewEngine.updateTimeDisplay(minsDisp, secsDisp, millisecsDisp);
   },
 
