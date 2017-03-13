@@ -5,37 +5,43 @@
 
 ### The 6 highest-starred npm packages are:
 
-# Library 1 Name
+# Express
 
 ### Description:
-brief brief description here
+Web framework for node that provides an intuitive and easy alternative to
+traverse the client/server model.
 
-### Total Downloads last month:
+### Total Downloads last month: 10,538,532
 
-# Library 2 Name
-
-### Description:
-brief description here
-
-### Total Downloads last month:
-
-# Library 3 Name
+# Gulp
 
 ### Description:
-brief description here
+Gulp is a toolkit for automating tasks in the development workflow.
+Automation tasks include: easily making html files from templates, compressing
+images, compiling Sass to CSS code, removing console and debugger statements
+from scripts, and making code ES6/ES5 compatible, deploying files, etc.
 
-### Total Downloads last month:
+### Total Downloads last month: 2,828,466
 
-# Library 4 Name
-
-### Description:
-brief description here
-
-### Total Downloads last month:
-
-# Library 5 Name
+# Request
 
 ### Description:
-brief description here
+Highly simplifies the http calls process.
 
-### Total Downloads last month:
+### Total Downloads last month: 21,145,692
+
+# Async
+
+### Description:
+Node package that helps deal with some of the workarounds created with node's
+asynchronous structure. Examples include async.each() method, async.parallel()
+method, etc.
+
+### Total Downloads last month: 42,353,675
+
+# Lodash
+
+### Description:
+Contains a lot of built in methods to perform on arrays/objects.
+
+### Total Downloads last month: 40,760,784
