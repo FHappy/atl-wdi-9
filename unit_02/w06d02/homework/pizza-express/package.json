@@ -1,0 +1,14 @@
+{
+  "name": "pizza-express",
+  "version": "1.0.0",
+  "description": "pizza server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hassan Masroor",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
