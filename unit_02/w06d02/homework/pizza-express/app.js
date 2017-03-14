@@ -2,21 +2,19 @@ var express = require('express');
 var app = express();
 var port = 3000;
 var hbs = require('hbs');
+
 app.set('view engine', 'hbs');
 app.set('views', './views');
+app.use(express.static(__dirname + '/public'));
 
-app.get('/', function(req, res, next) {
-  res.send('Welcome to Pizza Express!');
-})
+var orderController = require(__dirname + '/controllers/order_controller.js');
+app.use('/order', orderController);
 
-app.get('/topping/:type', function(req, res, next) {
-  res.send(`${req.params.type} pizza! Good choice.`);
-});
+var toppingsController = require(__dirname + '/controllers/toppings_controller.js');
+app.use('/toppings', toppingsController);
 
-app.get('/order/:amount/:size', function(req, res, next) {
-  res.send(`Your order for ${req.params.amount} ${req.params.size}` +
-           ` pizzas will be ready in 1 minute!`);
-});
+var indexController = require(__dirname + '/controllers/index_controller.js');
+app.use('/', indexController);
 
 app.listen(port, function() {
   console.log("==========================");
