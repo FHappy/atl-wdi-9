@@ -15,6 +15,10 @@ return largeBarrel;
 
 var shipFuelCost = function(fuelPrice, milesPerGallon){
   //your code here
+  var numberOfGallons = 24901 / milesPerGallon;
+  var cost = numberOfGallons * fuelPrice;
+
+  return cost;
 };
 
 //*************************
@@ -23,6 +27,12 @@ var shipFuelCost = function(fuelPrice, milesPerGallon){
 
 var calcFruitJuice = function(a, b, c, d){
   //your code here
+  var costcoFruitJuice = a * b;
+  var kirklandFruitJuice = c * d;
+  var pureJuiceTotal = costcoFruitJuice + kirklandFruitJuice;
+
+  var pureJuicePercentage = (pureJuiceTotal / (a + c)) / 100;
+  return pureJuicePercentage;
 };
 
 //DO NOT EDIT BELOW THIS LINE//
