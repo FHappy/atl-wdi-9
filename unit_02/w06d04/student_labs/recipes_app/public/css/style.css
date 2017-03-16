@@ -1,0 +1,16 @@
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+img {
+  height: 500px;
+  width: 600px;
+  /*margin: auto;*/
+}
+
+.imageHolder {
+  display: flex;
+  justify-content: center;
+
+}

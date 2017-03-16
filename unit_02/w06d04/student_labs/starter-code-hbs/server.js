@@ -22,8 +22,10 @@ app.use( logger('dev'));
 app.set('view engine', 'hbs');
 
 /* HOME */
-app.get('/', function(req,res) {
-  res.send('This is our Home Page');
+app.get('/recipes', function(req,res) {
+  res.render('index.hbs', {
+
+  });
 });
 
 /* INDEX TODOS */

@@ -1,0 +1,25 @@
+
+<ol>
+  {{#each recipes}}
+  <li>
+    <div class="row">
+    <div class="page-header">
+        <h1>{{title}}</h1>
+    </div>
+      <div class="col-lg-6">
+        {{#if veggie}}
+          <p>Vegetarian? You bet!</p>
+        {{else}}
+            <p> Vegetarian? No way! Meat = good!</p>
+        {{/if}}
+      </div>
+
+    <br>
+    <br>
+      <div class="col-lg-12 imageHolder">
+        <p><img src="{{imageUrl}}"></p>
+      </div>
+  </div>
+  </li>
+  {{/each}}
+</ol>
