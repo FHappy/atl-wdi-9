@@ -24,11 +24,8 @@
 
 ### Question 4: What does CRUD stand for?  What are the HTTP verbs that are associated with each function?
   |C| create| POST |
-  | |       |      |
   |R| read  | GET  |
-  | |       |      |
   |U| update| PUT  |
-  | |       |      |
   |D| delete|DELETE|
 
   I tried to make a table with md format, I don't know if it will render correctly or not.
