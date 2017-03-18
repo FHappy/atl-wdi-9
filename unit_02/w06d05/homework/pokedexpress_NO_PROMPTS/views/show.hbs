@@ -1,0 +1,171 @@
+<div class="page-header">
+  <h2>{{pokemon.name}}</h2>
+  <br>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <h4>Name: {{pokemon.name}}</h4>
+    <img src="{{pokemon.img}}">
+  </div>
+
+  <div class="col-lg-3">
+    <h4>Type:</h4>
+      {{#each pokemon.type}}
+        <h5>{{this}}</h5>
+      {{/each}}
+
+    <h4>Stats:</h4>
+      {{#each pokemon.stats}}
+        <h5>{{@key}}: {{this}}</h5>
+      {{/each}}
+  </div>
+
+  <div class="col-lg-3">
+    <h4>Gender:</h4>
+    {{#each pokemon.misc.sex}}
+      <h5>{{@key}}: {{this}}%</h5>
+    {{/each}}
+
+    <h4>Abilities:</h4>
+    {{#each pokemon.misc.abilities}}
+      <h5>{{@key}}: {{this}}</h5>
+    {{/each}}
+
+  </div>
+</div>
+<br>
+<br>
+<div class="page-header">
+  <h2>Move Lists</h2>
+  <br>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h3>Move List By Level:</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Learned at Level</th>
+            <th>Name</th>
+            <th>Generation</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each pokemon.moves.level}}
+            <tr>
+              <td>{{learnedat}}</td>
+              <td>{{name}}</td>
+              <td>{{gen}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h3>Move List by TM/HM:</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>TM/HM#</th>
+            <th>Name</th>
+            <th>Generation</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each pokemon.moves.tmhm}}
+            <tr>
+              <td>{{learnedat}}</td>
+              <td>{{name}}</td>
+              <td>{{gen}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h3>Move List by Egg:</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Generation</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each pokemon.moves.egg}}
+            <tr>
+              <td>{{name}}</td>
+              <td>{{gen}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h3>Move List by Tutor:</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Generation</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each pokemon.moves.tutor}}
+            <tr>
+              <td>{{name}}</td>
+              <td>{{gen}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h3>Move List Specific to Generations 3 and 4:</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Acquired by</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each pokemon.moves.gen34}}
+            <tr>
+              <td>{{name}}</td>
+              <td>{{method}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
