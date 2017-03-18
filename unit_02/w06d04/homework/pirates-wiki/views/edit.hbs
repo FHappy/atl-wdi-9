@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6">
+      <form action="/pirates/{{id}}?_method=PUT" method="POST">
+        <div class="form-group">
+          <label for="name">Current Name: {{pirate.name}}</label>
+          <input type="text" name="name" class="form-control" placeholder="Enter New Name">
+
+          <label for="birthplace">Current Birthplace: {{pirate.birthplace}}</label>
+          <input type="text" name="birthplace" class="form-control" placeholder="Enter New Birthplace">
+
+          <label for="death_year">Current Year of Death: {{pirate.death_year}}</label>
+          <input type="text" name="death_year" class="form-control" placeholder="Enter New Year of Death">
+
+          <label for="base">Current Base: {{pirate.base}}</label>
+          <input type="text" name="base" class="form-control" placeholder="Enter New Base">
+
+          <label for="nickname">Current Nickname: {{pirate.nickname}}</label>
+          <input type="text" name="nickname" class="form-control" placeholder="Enter New Nickname">
+        </div>
+        <div>
+          <button type="submit" class="btn btn-lg btn-danger" name="button">Update Pirate</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

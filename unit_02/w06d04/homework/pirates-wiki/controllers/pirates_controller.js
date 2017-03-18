@@ -20,11 +20,34 @@ router.post('/', function(req, res) {
     base: req.body.base,
     nickname: req.body.nickname
   }
-  
+
   pirates.push(newPirate);
   res.redirect('/pirates');
 });
 
+router.get('/:id/edit', function(req, res) {
+  res.render('edit.hbs', {
+    pirate: pirates[req.params.id],
+    id: req.params.id
+  });
+});
+
+router.put('/:id', function(req, res) {
+  var currentPirate = pirates[req.params.id];
+
+  currentPirate.name = req.body.name;
+  currentPirate.birthplace = req.body.birthplace;
+  currentPirate.death_year = req.body.death_year;
+  currentPirate.base = req.body.base;
+  currentPirate.nickname = req.body.nickname;
+
+  res.redirect('/pirates');
+})
+
+router.delete('/:id', function(req, res) {
+  pirates.splice(req.params.id, 1);
+  res.redirect('/pirates');
+});
 router.get('/:id', function(req, res) {
   res.render('show.hbs', {
     pirate: pirates[req.params.id]

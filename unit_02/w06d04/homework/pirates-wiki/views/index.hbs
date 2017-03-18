@@ -6,7 +6,14 @@
   <div class="col-lg-12">
     <ul class="list-group">
       {{#each piratesList}}
-        <a href="/pirates/{{@index}}" class="list-group-item"><span class="listItem">{{name}}</span></a>
+        <a href="/pirates/{{@index}}" class="list-group-item justify-content-between">
+          <span class="listItem">{{name}}</span>
+          <span class="badge badge-default badge-pill">
+            <form action="/pirates/{{@index}}?_method=DELETE" method="post">
+              <input type="submit" value="X">
+            </form>
+          </span>
+        </a>
       {{/each}}
     </ul>
   </div>
