@@ -4,8 +4,8 @@
 </div>
 
 <div class="row">
-  <div class="col-lg-6">
-    <h4>Name: {{pokemon.name}}</h4>
+  <div class="col-lg-3">
+    <!-- <h4>Name: {{pokemon.name}}</h4> -->
     <img src="{{pokemon.img}}">
   </div>
 
@@ -32,6 +32,20 @@
       <h5>{{@key}}: {{this}}</h5>
     {{/each}}
 
+    <h4>Classifiation:</h4>
+    <h5>{{pokemon.misc.classification}}</h5>
+
+  </div>
+
+  <div class="col-lg-3">
+    <h5>Height: {{pokemon.misc.height}}</h5>
+    <h5>Weight: {{pokemon.misc.weight}}</h5>
+    <h5>Capture Rate: {{pokemon.misc.capturerate}}%</h5>
+    <h5>Eggsteps: {{pokemon.misc.eggsteps}}</h5>
+    <h5>Exp Growth: {{pokemon.misc.expgrowth}}</h5>
+    <h5>EV Points: {{pokemon.misc.evpoints}}</h5>
+    <h5>Flee Flag: {{pokemon.misc.fleeflag}}</h5>
+    <h5>Entry Forest Level: {{pokemon.misc.entreeforestlevel}}</h5>
   </div>
 </div>
 <br>
