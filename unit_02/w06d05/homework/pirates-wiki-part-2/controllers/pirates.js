@@ -38,6 +38,19 @@ router.get('/:id', function(req, res){
 // CREATE
 //==============================
 
+router.post('/new', function(req, res) {
+	var newPirate = {
+		name: req.body.name,
+		birthplace: req.body.birthplace,
+		death_year: req.body.death_year,
+		base: req.body.base,
+		nickname: req.body.nickname
+	}
+
+	pirates.push(newPirate);
+	res.redirect('/pirates');
+});
+
 //==============================
 // UPDATE
 //==============================
