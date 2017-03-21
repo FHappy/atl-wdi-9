@@ -1,0 +1,15 @@
+{
+  "name": "promises-lab-starter",
+  "version": "1.0.0",
+  "description": "Run `node readFile.js names.txt` from the command line. You should see this in your Terminal:",
+  "main": "readFile.js",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
