@@ -36,16 +36,6 @@ var StudentSchema = new Schema({
 var ProjectModel = mongoose.model('Project', ProjectSchema);
 var StudentModel = mongoose.model('Student', StudentSchema);
 
-var hassan = new StudentModel({name: 'Hassan', age: 26});
-hassan.save(function(err, student) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(student);
-  }
-});
-
-
 
 module.exports = {
   StudentModel: StudentModel,

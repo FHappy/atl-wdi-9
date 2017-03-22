@@ -29,8 +29,32 @@ entities/abstractions (e.g. Senior Paws app, above) that the app might use, and 
 
 This app provides easy access to all your e-mail service providers in one app. The app will let you select one of your email addresses and view your e-mails for that address.
 
-```
-Write your answer here or in a separate js file.
+```Javascript
+// Write your answer here or in a separate js file.
+// multiple email addresses, each with their own address/password, forwarding settings, etc
+var emailHandler = {
+  Users: [
+    {
+    id: 1,
+    name: Dum Dum,
+    emailAccounts: [
+      hotmail: {
+        username: 'exampleLogin@hotmail.com',
+        password: 'examplePassword'
+      },
+      gmail: {
+        username: 'itsMeMario@gmail.com',
+        password: 'anotherCastle'
+      },
+      aol: {
+        username: 'stillGotIt@aol.com',
+        password: 'myspaceIscool'
+      }
+    ]
+    }
+  ]
+
+}
 ```
 
 ### 2. Radio on the Internet app
@@ -38,21 +62,69 @@ Write your answer here or in a separate js file.
 This app hosts a ton of radio stations, each featuring their own playlists of songs. The radio stations can be listed by genre or popularity.
 
 
-```
-Write your answer here or in a separate js file.
+```javascript
+var radioOnTheInternet = {
+  stations: {
+    id: 1,
+    name: '103.Bork, the station for good boys'
+    genre: 'Dogecore',
+    subscribers: 45098080825325,
+    playlists: [
+      {title: 'Who let the Dogs Out'},
+      {title: 'Boop the Snoot'},
+      {title: 'Going to the park'}
+    ],
+
+  }
+}
+
 ```
 
 ### 3. Rock Concert App
 
 This app will be a tool for managing all of your favorite bands' concerts; it will keep track of their tour dates, ticket purchasing, and next recommended show.
 
-```
-Write your answer here or in a separate js file.
+```javascript
+// User (with info) => List of bands => events => concerts => ticket prices =>
+var rockConcertApp = {
+  Users: [
+    {
+      id: 1,
+      name: 'John Hammerschmidt',
+      zipCode: 30312,
+      favoriteBands: [
+        {
+          name: 'The Rock Lobster',
+          upcomingEvents: [
+            {
+              venue: '529',
+              date: '3/9/12',
+              ticketPrice: 15,
+              soldOut: false
+            },
+            {
+              venue: 'The Earl',
+              ticketPrice: 10,
+              date: '3/12/12'
+              soldOut: true
+            }
+          ]
+        },
+      ]
+    }
+  ]
+}
+
 ```
 
 ### 4. Coffee To-Go App
 
 This app will allow customers to browse a list of coffeeshops nearby, order drinks off of their menu, add those drinks to a shopping cart, and save that cart as a past order once the purchase is complete.
+
+```javascript
+
+
+```
 
 ### 5. Team Tracker App
 
