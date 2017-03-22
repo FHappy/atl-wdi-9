@@ -1,0 +1,13 @@
+<ul>
+  {{#each projectIdeas}}
+    <a href="/users/{{../user.id}}/project-ideas/{{@index}}/edit">Edit Project #{{@index}}</a>
+    <li>Description: {{this.description}}</li>
+    <li>In Progress: {{this.in_progress}}</li>
+    <li>Date Created: {{this.created_at}}</li>
+    <li>Last Updated: {{this.updated_at}}</li>
+    <br>
+
+  {{/each}}
+</ul>
+
+<a href="/users/{{user.id}}/project-ideas/new">Add New Project Idea</a>

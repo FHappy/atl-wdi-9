@@ -1,0 +1,17 @@
+<h1>New Project Idea</h1>
+<form action="/users/{{userId}}/project-ideas" method="POST">
+  <div>
+    <label for="description">
+      Project Idea Description:
+    </label>
+    <input type="text" name="description" value="Project Idea Description"/>
+    <label for="in_progress">
+    In Progress:
+    </label>
+    Yes<input type="radio" name="in_progress" value="true" checked="true">
+    No<input type="radio" name="in_progress" value="false">
+  </div>
+  <div>
+    <input type="submit" value="Add Idea"/>
+  </div>
+</form>
