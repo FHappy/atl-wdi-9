@@ -1,7 +1,5 @@
-//requirements: require mongoose
+var Schema         = require('../db/schema.js');
+var mongoose       = require('mongoose');
 
-
-//create your donut schema:
-
-
-//export your donut with module.exports()
+var Donut          = Schema.Donut;
+module.exports     = Donut;

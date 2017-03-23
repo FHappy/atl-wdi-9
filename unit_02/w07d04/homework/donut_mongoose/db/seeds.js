@@ -2,10 +2,10 @@
 // REQUIREMENTS
 //======================
 //require express, mongoose, Donut schema, user
-var express = require("express");
-var router = express.Router();
-var mongoose = require("mongoose");
-var Donut = require("../models/products.js");
+var express 			= require("express");
+var router 				= express.Router();
+var mongoose 			= require("mongoose");
+var Donut 				= require("../models/donuts.js");
 
 
 router.get('/newproducts', function(req, res) {
@@ -23,19 +23,19 @@ router.get('/newproducts', function(req, res) {
 					img: "https://grandmastersensei.files.wordpress.com/2009/06/donut.jpg",
 					price: 25,
 					qty: 15
-		}, {
+			}, {
 					name: "Chocolate",
 					description: "Chocolate Donut nom nom nom",
 					img: "https://deerfieldsbakery.com/images/items/Other/Pastries-Donuts-Chocolate-Iced-Glazed_MD.jpg",
 					price: 7000,
 					qty: 1
-		}, {
+			}, {
 					name: "Donut Holes",
 					description: "For the snackers.",
 					img: "http://sweets.seriouseats.com/images/20110313-142295-Dough-DonutHoles.jpg",
 					price: 10,
 					qty: 23
-		}
+			}
 	];
 
 

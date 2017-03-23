@@ -5,9 +5,36 @@
 	<a href="/">Return to Home Page</a>
 
 	<div id="edit-form" class="donut-container-show">
+		<form action="/" method="post">
+			<div>
+				<label for="name">Name: </label>
+				<input type="text" name="name" value="Donut Name">
+			</div>
 
-		<<<< YOUR WHOLE FORM GOES HERE >>>>
+			<div>
+				<label for="description">Description: </label>
+				<input type="text" name="description" value="Donut Description">
+			</div>
 
+			<div>
+				<label for="img">Donut Image Url:</label>
+				<input type="text" name="img" value="Donut Img Url">
+			</div>
+
+			<div>
+				<label for="price">Price: </label>
+				<input type="number" name="price" value="0">
+			</div>
+
+			<div>
+				<label for="qty">Donut Quantity: </label>
+				<input type="number" name="qty" value="0">
+			</div>
+
+			<div>
+				<input type="submit" value="Create Donut">
+			</div>
+		</form>
 	</div>
 </main>
 </body>
