@@ -6,18 +6,18 @@
 
 	<div id="edit-form" class="donut-container-show">
 		<form action="/{{donut.id}}/edit?_method=PATCH" method="post">
-			<label for="name">Current Name: {{donut.name}}</label>
-			<input type="text" name="name" value="New Donut Name">
+			<label for="name">Name:</label>
+			<input type="text" name="name" value="{{donut.name}}">
 			<br>
-			<label for="description">Current Description: {{donut.description}}</label>
+			<label for="description">Description:</label>
 			<br>
-			<input type="text" name="description" value="New Donut Description">
+			<input type="text" name="description" value="{{donut.description}}">
 			<br>
-			<label for="price">Current Price: {{donut.price}}</label>
-			<input type="number" name="price" value="0">
+			<label for="price">Price:</label>
+			<input type="number" name="price" value="{{donut.price}}">
 			<br>
-			<label for="qty">Current Quantity: {{donut.qty}}</label>
-			<input type="number" name="qty" value="0">
+			<label for="qty">Quantity: </label>
+			<input type="number" name="qty" value="{{donut.qty}}">
 			<br>
 			<input type="submit" value="Update Donut">
 		</form>

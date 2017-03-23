@@ -1,0 +1,11 @@
+<h2>Shopping Cart</h2>
+<div class="donut-container-show">
+  {{#each user.shoppingCart}}
+  <h2 id="donut-name">
+      {{name}}
+  </h2>
+  <img src="{{img}}" alt="donut that you bought">
+  <h4>{{price}}</h4>
+
+  {{/each}}
+</div>

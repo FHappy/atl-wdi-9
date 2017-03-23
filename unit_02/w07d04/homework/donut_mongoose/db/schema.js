@@ -13,8 +13,15 @@ var DonutSchema = new Schema({
   qty: Number
 });
 
+var UserSchema = new Schema({
+  username: String,
+  shoppingCart: [DonutSchema]
+});
+
 var DonutModel = mongoose.model('Donut', DonutSchema);
+var UserModel = mongoose.model('User', UserSchema);
 //export your donut with module.exports()
 module.exports = {
-  Donut: DonutModel
+  Donut: DonutModel,
+  User: UserModel
 }

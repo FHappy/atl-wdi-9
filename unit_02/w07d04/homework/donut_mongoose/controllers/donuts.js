@@ -6,6 +6,7 @@ var express       = require('express');
 var router        = express.Router();
 var mongoose      = require('mongoose');
 var Donut         = require('../models/donuts.js');
+var User          = require('../models/user.js');
 
 //======================
 // INDEX
@@ -39,14 +40,22 @@ router.get('/new', function(req, res) {
 // Create a GET show route "/:id" that renders the donut's show page
 
 router.get('/:id', function(req, res) {
-  Donut.findById(req.params.id)
-    .exec(function(err, Donut) {
-      if (err) {console.log(err);}
+  User.find({})
+  .exec(function(err, users){
+    if (err) {console.log(err);}
+    var currentUser = users[0];
+    console.log(users);
+    Donut.findById(req.params.id)
+      .exec(function(err, Donut) {
+        if (err) {console.log(err);}
 
-      res.render('products/show.hbs', {
-        donut: Donut
+        res.render('products/show.hbs', {
+          donut: Donut,
+          user: currentUser
+        });
       });
-    });
+  });
+
 });
 
 
@@ -123,6 +132,38 @@ router.delete('/:id', function(req, res) {
     });
 });
 
+router.put('/:id/:userId/buy', function(req, res) {
+  User.findById(req.params.userId)
+    .exec(function(err, user) {
+      if (err) {console.log(err);}
+      console.log(user); //should be DeezDonutz
+
+      Donut.findById(req.params.id)
+        .exec(function(err, donut) {
+          if (err) {console.log(err);}
+          console.log(donut);
+          donut.qty -= 1;
+          donut.save(function(err) {
+            if (err) {console.log(err);}
+          });
+          user.shoppingCart.push(donut);
+          user.save(function(err) {
+            if (err) {console.log(err);}
+          });
+          res.redirect('/');
+        });
+    });
+});
+
+router.get('user/:userId/cart', function(req, res) {
+  User.findById(req.params.userId)
+    .exec(function(err, user) {
+      if (err) {console.log(err);}
+      res.render('user/shoppingCart.hbs', {
+        user: user
+      });
+    });
+});
 
 //======================
 // EXPORTS

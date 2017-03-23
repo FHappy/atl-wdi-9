@@ -6,7 +6,7 @@ var express 			= require("express");
 var router 				= express.Router();
 var mongoose 			= require("mongoose");
 var Donut 				= require("../models/donuts.js");
-
+var User 					= require('../models/user.js');
 
 router.get('/newproducts', function(req, res) {
 
@@ -38,11 +38,20 @@ router.get('/newproducts', function(req, res) {
 			}
 	];
 
+	var newUser = new User({
+		username: 'DeezDonutz'
+	});
 
   Donut.create(newProducts, function(err) {
         console.log("SEED: NEW PRODUCTS CREATED!");
         res.redirect('/');
   });
+
+	newUser.save(function(err) {
+		if (err) {console.log(err);}
+
+		console.log(newUser);
+	});
 
 });
 
