@@ -6,7 +6,8 @@ mongoose.Promise = global.Promise;
 //add ListSchema here
 //your code
 var ListSchema = new Schema({
-
+  name: String,
+  completed: Boolean
 });
 
 var UserSchema = new Schema({
@@ -40,5 +41,6 @@ var ListModel = mongoose.model('List', ListSchema);
 
 //export List below
 module.exports = {
-  User: UserModel
+  User: UserModel,
+  List: ListModel
 };

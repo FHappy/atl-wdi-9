@@ -8,6 +8,7 @@ function createSecure(req, res, next) {
   next();
 }
 
+
 function loginUser(req, res, next) {
   var email = req.body.email;
   var password = req.body.password;
@@ -29,10 +30,17 @@ function loginUser(req, res, next) {
 
 //create a function called "authorized" that checks if the CurrentUser's id matches the id in params
 //your code here
+function authorized(req, res, next) {
+    if (!req.session.currentUser || req.params.id !== req.session.currentUser.id) {
+      res.json({status: 404, data: err});
+    }
 
+    next();
+}
 //Export this function below:
 
 module.exports = {
   createSecure: createSecure,
-  loginUser: loginUser
+  loginUser: loginUser,
+  authorized: authorized
 };
