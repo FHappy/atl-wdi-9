@@ -24,6 +24,16 @@ router.get('/', function(req, res) {
     });
 });
 
+router.get('/user', function(req, res) {
+  User.find({})
+    .exec(function(err, users) {
+      if (err) {console.log(err);}
+
+      res.render('user/shoppingCart.hbs', {
+        user: users[0]
+      });
+    });
+});
 
 //======================
 // NEW
@@ -155,15 +165,7 @@ router.put('/:id/:userId/buy', function(req, res) {
     });
 });
 
-router.get('user/:userId/cart', function(req, res) {
-  User.findById(req.params.userId)
-    .exec(function(err, user) {
-      if (err) {console.log(err);}
-      res.render('user/shoppingCart.hbs', {
-        user: user
-      });
-    });
-});
+
 
 //======================
 // EXPORTS
