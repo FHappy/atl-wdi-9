@@ -10,8 +10,8 @@ var mongoose              = require('mongoose');
 
 
 
-var usersController = require('./controllers/users.js');
-var sessionsController = require('./controllers/sessions.js');
+var usersController       = require('./controllers/users.js');
+var sessionsController    = require('./controllers/sessions.js');
 
 // require the list controller here
 

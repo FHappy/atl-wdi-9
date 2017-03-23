@@ -1,9 +1,9 @@
 //require express, router, User Schema, List Schema, authHelpers
-var express = require('express');
-router = express.Router();
-var User = require('../models/user.js');
-var List = require('../models/list.js');
-var authHelpers = require('../helpers/auth.js');
+var express                 = require('express');
+router                      = express.Router();
+var User                    = require('../models/user.js');
+var List                    = require('../models/list.js');
+var authHelpers             = require('../helpers/auth.js');
 
 //SHOW: create a GET "/" that displays all users on the index page
 router.get('/', function(req, res) {
@@ -30,7 +30,8 @@ router.post('/', authHelpers.createSecure, function(req, res){
 
   var user = new User({
     email: req.body.email,
-    password_digest: res.hashedPassword
+    password_digest: res.hashedPassword,
+    username: req.body.username
   });
 
   user.save(function(err, user){
