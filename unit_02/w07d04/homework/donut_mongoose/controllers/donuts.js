@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
     });
 });
 
-router.get('/user', function(req, res) {
+router.get('/users', function(req, res) {
   User.find({})
     .exec(function(err, users) {
       if (err) {console.log(err);}
@@ -142,7 +142,7 @@ router.delete('/:id', function(req, res) {
     });
 });
 
-router.put('/:id/:userId/buy', function(req, res) {
+router.put('/:id/users/:userId/buy', function(req, res) {
   User.findById(req.params.userId)
     .exec(function(err, user) {
       if (err) {console.log(err);}
