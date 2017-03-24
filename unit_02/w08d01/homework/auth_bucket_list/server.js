@@ -18,6 +18,8 @@ var listController        = require('./controllers/lists.js');
 var app = express();
 
 mongoose.connect('mongodb://localhost/auth');
+var db = mongoose.connection;
+
 
 app.set('view engine', 'hbs');
 
@@ -38,7 +40,13 @@ app.use('/sessions', sessionsController);
 app.use('/users/:id/lists', listController);
 
 //add the third app.use here (check readme for which route)
+db.on('error', function(err) {
+  console.log('shit, ' + err);
+});
 
+db.once('open', function() {
+  console.log('database is connected, lol');
+});
 
 app.listen(4000, function() {
   console.log('hey');

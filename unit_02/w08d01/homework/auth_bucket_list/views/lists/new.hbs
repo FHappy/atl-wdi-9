@@ -1,0 +1,12 @@
+<h1>Create New List Item</h1>
+
+<form action="/users/{{user.id}}/lists/" method="post">
+  <label for="name">List Item Name</label>
+  <input type="text" name="name" value="Enter Name">
+
+  <label for="completed">Completed?</label>
+  Yes <input type="radio" name="completed" value="true" checked='true'>
+  No <input type="radio" name="completed" value="false">
+
+  <input type="submit" value="Create New List Item">
+</form>

@@ -14,29 +14,38 @@ function loginUser(req, res, next) {
   var password = req.body.password;
 
   User.findOne({ email: email })
-  .then(function(foundUser){
-    if (foundUser == null) {
-      res.json({status: 401, data: "unauthorized"});
+    .then(function(foundUser){
+      if (foundUser == null) {
+        res.json({status: 401, data: "unauthorized"});
 
-    } else if (bcrypt.compareSync(password, foundUser.password_digest)) {
-      req.session.currentUser = foundUser;
-    }
-    next();
-  })
-  .catch(function(err){
-    res.json({status: 500, data: err});
-  });
+      } else if (bcrypt.compareSync(password, foundUser.password_digest)) {
+        console.log('passed compareSync function');
+        req.session.currentUser = foundUser;
+      }
+      console.log('current user is ');
+      console.log(req.session.currentUser);
+      console.log('foundUser is ');
+      console.log(foundUser);
+      next();
+    })
+    .catch(function(err){
+      res.json({status: 500, data: err});
+    });
 }
 
 //create a function called "authorized" that checks if the CurrentUser's id matches the id in params
 //your code here
-function authorized(req, res, next) {
-    if (!req.session.currentUser || req.params.id !== req.session.currentUser.id) {
-      res.json({status: 404, data: err});
-    }
-
-    next();
+function authorized (req, res, next) {
+  // console.log('current user is ');
+  // console.log(req.session.currentUser);
+  // console.log('with id: ');
+  // console.log(req.session.currentUser._id);
+  if (!req.session.currentUser || req.params.id !== req.session.currentUser._id) {
+    res.json({status: 404, data: 'OOps, you\'re not authorized, tee hee'})
+  }
+  next();
 }
+
 //Export this function below:
 
 module.exports = {
