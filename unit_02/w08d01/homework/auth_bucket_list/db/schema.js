@@ -7,7 +7,8 @@ mongoose.Promise = global.Promise;
 //your code
 var ListSchema = new Schema({
   name: String,
-  completed: Boolean
+  completed: Boolean,
+  comments: String
 });
 
 var UserSchema = new Schema({

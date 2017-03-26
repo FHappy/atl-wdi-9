@@ -79,6 +79,7 @@ router.put('/:listId', function(req, res) {
       var listItem = user.list.id(req.params.listId);
       listItem.name = req.body.name;
       listItem.completed = req.body.completed;
+      listItem.comments = req.body.comments;
       user.save(function(err, item) {
         if (err) {console.log(err);}
         console.log(item);
