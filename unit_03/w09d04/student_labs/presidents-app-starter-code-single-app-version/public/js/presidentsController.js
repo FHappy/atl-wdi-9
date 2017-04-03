@@ -1,19 +1,74 @@
 angular.module('ThePresidentsApp')
   .controller('PresidentsController', PresidentsController);
 
-function PresidentsController(){
-  this.all = [
-    {name: 'George Washington', start: 1789, end: 1797 },
-    {name: 'John Adams', start: 1797, end: 1801 },
-    {name: 'Thomas Jefferson', start: 1801, end: 1809 },
-    {name: 'James Madison', start: 1809, end: 1817 },
-    {name: 'Joshua Quincy Kushner', start: 2021, end: 2029 },
-  ];
-  this.addPresident = addPresident;
-  this.newPresident = {};
+PresidentsController.$inject = ['$http'];
 
-  function addPresident(){
-    this.all.push(this.newPresident);
-    this.newPresident = {};
+
+
+function PresidentsController($http){
+  var vm = this;
+
+  vm.loadingAll = true;
+  vm.presidentToEdit = null;
+  vm.addPresident = addPresident;
+  vm.showEditForm = showEditForm;
+  vm.editPresident = editPresident;
+  vm.all = [];
+  vm.newPresident = {};
+  vm.deletePresident = deletePresident;
+
+  activate();
+
+  function activate() {
+    $http
+      .get('/presidents')
+      .then(function setAll(response) {
+        vm.all = response.data.presidents;
+        vm.loadingAll = false;
+      });
+  }
+
+  function addPresident() {
+    vm.loadingAll = true;
+    $http
+      .post('/presidents', vm.newPresident)
+      .then(function resolve(response) {
+        vm.all.push(response.data.president);
+        vm.newPresident = {};
+        vm.loadingAll = false;
+      }, function reject(response) {
+        console.log(response.message);
+      });
+  }
+
+  function showEditForm(president) {
+    console.log(president);
+    vm.presidentToEdit = president;
+  }
+
+  function editPresident(president) {
+    vm.loadingAll = true;
+    $http
+      .patch('/presidents/' + president._id, president)
+      .then(function resolve(response) {
+        console.log(response.message);
+        vm.presidentToEdit = null;
+        vm.loadingAll = false;
+      }, function reject(response) {
+        console.log(response.message);
+      });
+  }
+
+  function deletePresident(president) {
+    vm.loadingAll = true;
+    $http
+      .delete('/presidents/' + president._id)
+      .then(function resolve(response) {
+        console.log(response.message);
+        vm.all = vm.all.filter(x => x != president);
+        vm.loadingAll = false;
+      }, function reject(response) {
+        console.log(response.message);
+      });
   }
 }

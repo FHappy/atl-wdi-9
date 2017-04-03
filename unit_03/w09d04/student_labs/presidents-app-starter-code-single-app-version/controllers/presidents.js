@@ -5,11 +5,12 @@ var methodOverride = require('method-override') //used to manipulate POST
 var President = require('../models/President');
 
 router.get('/', function indexAction(req, res) {
-  President.find(function(error, presidents) {
-    if(error) res.json({message: 'Could not find any president'});
+  President.find()
+    .exec(function(error, presidents) {
+      if(error) res.json({message: 'Could not find any president'});
 
-    res.json({presidents: presidents});
-  });
+      res.json({presidents: presidents});
+    });
 });
 
 router.post('/', function createAction(req, res) {

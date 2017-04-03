@@ -16,10 +16,15 @@
       <ul id="presidents">
         <li ng-repeat="president in presidents.all">
           <strong>{{president.name}}</strong> <em>({{president.start}} - {{president.end}})</em>
+          <button ng-click="presidents.showEditForm(president)">Edit</button>
+          <button ng-click="presidents.deletePresident(president)">Delete</button>
         </li>
       </ul>
 
-      <form class="add-president" ng-submit='presidents.addPresident()'>
+      <div ng-if='presidents.loadingAll'>
+        Loading...
+      </div>
+      <form class="add-president" ng-show="!presidents.presidentToEdit" ng-submit='presidents.addPresident()'>
         <div>
           <label for="new-president-name">President's Name</label>
           <input type="text" id="new-president-name" placeholder="James Monroe" ng-model='presidents.newPresident.name'>
@@ -37,6 +42,27 @@
 
         <div>
           <input type="submit" value="Add President">
+        </div>
+      </form>
+
+      <form class="add-president" ng-hide="!presidents.presidentToEdit" ng-submit='presidents.editPresident(presidents.presidentToEdit)'>
+        <div>
+          <label for="new-president-name">President's Name</label>
+          <input type="text" id="new-president-name" placeholder="{{presidents.presidentToEdit.name}}" ng-model='presidents.presidentToEdit.name'>
+        </div>
+
+        <div>
+          <label for="new-president-start">President's Starting Year</label>
+          <input type="text" id="new-president-start" placeholder="{{presidents.presidentToEdit.start}}" ng-model='presidents.presidentToEdit.start'>
+        </div>
+
+        <div>
+          <label for="new-president-end">President's Ending Year</label>
+          <input type="text" id="new-president-end" placeholder="{{presidents.presidentToEdit.end}}" ng-model='presidents.presidentToEdit.end'>
+        </div>
+
+        <div>
+          <input type="submit" value="Save Edited President">
         </div>
       </form>
 
