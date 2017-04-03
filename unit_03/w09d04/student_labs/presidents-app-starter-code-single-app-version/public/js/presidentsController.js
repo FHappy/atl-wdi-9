@@ -37,7 +37,7 @@ function PresidentsController($http){
         vm.newPresident = {};
         vm.loadingAll = false;
       }, function reject(response) {
-        console.log(response.message);
+        console.log(response.data.message);
       });
   }
 
@@ -51,11 +51,11 @@ function PresidentsController($http){
     $http
       .patch('/presidents/' + president._id, president)
       .then(function resolve(response) {
-        console.log(response.message);
+        console.log(response.data.message);
         vm.presidentToEdit = null;
         vm.loadingAll = false;
       }, function reject(response) {
-        console.log(response.message);
+        console.log(response.data.message);
       });
   }
 
@@ -64,11 +64,11 @@ function PresidentsController($http){
     $http
       .delete('/presidents/' + president._id)
       .then(function resolve(response) {
-        console.log(response.message);
+        console.log(response.data.message);
         vm.all = vm.all.filter(x => x != president);
         vm.loadingAll = false;
       }, function reject(response) {
-        console.log(response.message);
+        console.log(response.data.message);
       });
   }
 }
