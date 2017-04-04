@@ -44,10 +44,11 @@
                name="location"
                ng-model="criminals.newCriminal.location"
                placeholder="Reichenbach Falls, CH"
-               <!-- ng-pattern="/^[a-zA-Z]+,[a-zA-Z]{2}$/" -->
+               ng-pattern="/^[a-zA-Z]+, [a-zA-Z]{2}$/"
                required />
         <div class="error-messages" ng-messages="criminalForm.location.$error">
          <div ng-message="required">Must enter location before proceeding.</div>
+         <div ng-message="pattern">Location must be a city followed by 2 letter state/province</div>
         </div>
       </div>
       <div>
