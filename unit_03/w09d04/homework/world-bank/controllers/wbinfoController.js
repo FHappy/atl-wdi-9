@@ -4,6 +4,15 @@ var express = require('express'),
 var Wbinfo = require('../models/wbinfo.js');
 
 // get count of all documents in collection
+router.get('/', function(req, res) {
+  Wbinfo.find({})
+    .exec(function (err, records) {
+      if (err) {res.json({message: 'Unable to find any records: ' + records});}
+
+      res.json({records: records});
+    });
+});
+
 router.get('/count', function(req, res) {
   Wbinfo.count(function(err, count) {
     res.send(count.toString());
