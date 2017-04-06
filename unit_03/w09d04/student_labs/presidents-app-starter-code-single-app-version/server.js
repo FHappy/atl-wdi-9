@@ -9,11 +9,17 @@ var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/presidents-app');
 
-app.use(cors());
-
+<<<<<<< HEAD
+=======
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+var presidentsController = require("./controllers/presidents.js");
+app.use('/presidents', presidentsController);
+
+>>>>>>> c1ba13c7fa4e87d2c0547a57d23dadaff121eeef
+app.use(cors());
 
 app.use(express.static('public'));
 
