@@ -3,14 +3,18 @@
 		<strong>Loading...</strong>
 	</li>
 
-  <li ng-hide="$ctrl.loading" ng-repeat="criminal in $ctrl.criminals">
-    <strong>{{criminal.name}}</strong>
+	<li ng-hide="$ctrl.loading" ng-repeat="criminal in $ctrl.criminals">
+		<strong>{{criminal.name}}</strong>
 
 		<!-- Reference for Gerry -->
-    <!-- <em>{{criminal.crime}}</em> -->
-    
-    <span ng-if="criminal.status" class='status {{criminal.status | lowercase }}'>{{criminal.status | uppercase}}</span>
+		<!-- <em>{{criminal.crime}}</em> -->
 
-    <a>Click to see their crime (in users#show)</a>
-  </li>
+		<span ng-if="criminal.status" class='status {{criminal.status | lowercase }}'>{{criminal.status | uppercase}}</span>
+
+		<a ui-sref="show({criminalId: criminal._id })">
+			 Click to see their crime (in users#show)</a>
+		<a ui-sref="edit({criminalId: criminal._id})">Edit</a>
+	</li>
 </ul>
+
+<a ui-sref="new">Add New Criminal</a>

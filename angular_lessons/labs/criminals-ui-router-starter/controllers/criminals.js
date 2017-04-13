@@ -40,10 +40,10 @@ router.get('/:id', function showAction(request, response) {
 
 router.patch('/:id', function updateAction(request, response) {
   var id = request.params.id;
-
+  console.log(id);
   Criminal.findById({_id: id}, function(error, criminal) {
     if(error) response.json({message: 'Could not find criminal b/c:' + error});
-
+    console.log(request.body);
     if(request.body.name) criminal.name = request.body.name;
     if(request.body.location) criminal.location = request.body.location;
     if(request.body.status) criminal.status = request.body.status;
