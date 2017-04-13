@@ -1,11 +1,11 @@
 const controller = require('./about.controller.js');
 const template = require('./about.html');
 
-const AboutComponent = {
-    controller: controller,
-    template: template
+const component = {
+	controller: controller,
+	template: template
 };
 
 angular
-    .module('criminals')
-    .component('about', AboutComponent);
+	.module('criminals')
+	.component('about', component);

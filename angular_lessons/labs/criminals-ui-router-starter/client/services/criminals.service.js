@@ -30,7 +30,3 @@ function CriminalsService($http) {
     function editCriminal(editedCriminal) {
       return $http.patch('api/criminals/' + editedCriminal._id, editedCriminal);
     }
-
-
-
-}
