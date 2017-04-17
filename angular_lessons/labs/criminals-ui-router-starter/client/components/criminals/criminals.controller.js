@@ -15,17 +15,16 @@ function CriminalsController(CriminalsService, $stateParams) {
         loadAllCriminals();
     }
 
-
-    // HOW IT DOES STUFF
-    function loadAllCriminals() {
-        CriminalsService
-            .loadAll()
-            .then(function resolve(response) {
-                vm.criminals = response.data.criminals;
-                vm.loading = false;
-            });
-    }
-
+	// HOW IT DOES STUFF
+	function loadAllCriminals() {
+		CriminalsService
+			.loadAll()
+			.then(function resolve(response) {
+				console.log(response)
+				vm.criminals = response.data.criminals; // array of criminals
+				vm.loading = false;
+			});
+	}
 }
 
 module.exports = CriminalsController;
